@@ -12,3 +12,4 @@ for commit in commits:
     author = commit["commit"]["author"]["name"]
     message = commit["commit"]["message"]
     print(f"{author}: {message}\n")
+
