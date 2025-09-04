@@ -3,7 +3,7 @@ FROM python:3.12-alpine
 
 WORKDIR /app
 
-COPY fetch_commits.py .
+COPY prg.py .
 
 RUN pip install requests
 
