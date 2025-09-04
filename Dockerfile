@@ -1,10 +1,17 @@
+# Use an official Python runtime as a parent image
+FROM python:3.11-slim
 
-FROM python:3.12-alpine
-
+# Set a working directory inside the container
 WORKDIR /app
 
-COPY prg.py .
+# Copy requirements file first for dependency caching
+COPY requirements.txt .
 
-RUN pip install requests
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the rest of your application code
+COPY . .
+
+# Command to run your app
 CMD ["python", "prg.py"]
